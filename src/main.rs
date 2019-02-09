@@ -10,16 +10,19 @@ function f(a, b, c, d, e, f) {
     123
 }
 
-function g() {}
+function g() { g(1) }
 g()
 
 function main(argv) {
-    // var k = y;
+    var k = y;
     var a = 1;
     var b = 2;
     // var c;
-    var c = function h() {};
-    f()
+    var c = function h() {
+        var asd = a;
+    };
+    f();
+    // c();
 }
 
 f(((x)), g(), z, 1.1, -5, c)

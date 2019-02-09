@@ -182,9 +182,10 @@ impl AstVisitor for StaticAnalyser {
                     if let Def::Fn { args, .. } = def {
                         a = Some(Some(*args));
                     }
-                    if let Def::Var { callable, .. } = def {
+                    if let Def::Var { callable, ref mut used, .. } = def {
                         if *callable {
                             a = Some(None);
+                            *used = true;
                         }
                     }
                 });
